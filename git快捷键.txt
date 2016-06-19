@@ -1,0 +1,58 @@
+--拉去代码
+1.git pull
+--关联远程分支
+2.git checkout -b 分支  
+
+--提交
+1、git add -A
+2、git commit -m "[Feature]/[BugFix] XXXXXXXXXXXXXXXXXXXX（提交的代码描述，Feature表示新建功能，BugFix表示代码优化和bug处理）"  
+3、git push origin HEAD:refs/for/master
+
+
+--绑定用户名和邮箱
+git config --global  user.name “姓名”
+git config --global  user.email  “邮箱”
+
+--冲突：
+git add ./-A
+git stash list
+git stash
+git pull
+git stash pop (此时，会显示冲突的位置，手动解决冲突后，然后正常提交）
+git push ...
+
+--提交有误：(错误解决后提交方法）
+git status (查看修改）
+git add -A
+git commit --amend
+git push ...
+
+--对于产生依赖的解决方法：
+git log (查看之前的提交,将其abandon)
+git reset (加上别人提交的changeID,这样就将之前的修改给覆盖掉了）
+然后进行修改  正常提交
+
+
+Error:Execution failed for task ':app:process服务器DebugResources'.
+> com.android.ide.common.process.ProcessException: org.gradle.process.internal.
+ExecException: Process 'command 'C:\Java\SDK\build-tools\22.0.1\aapt.exe'' 
+finished with non-zero exit value 1
+
+studio中遇到gRGB（一般是图片资源出现了问题，需要查看图片格式是否正确）
+
+
+安卓studio教程及问题解决： 
+
+-- 遇到的问题及解决方案: http://blog.csdn.net/gtsong/article/details/21441411
+
+-- Gradle 系列教程 : http://segmentfault.com/a/1190000002411926
+
+-- Gradle 基础 : http://stormzhang.com/devtools/2014/12/18/android-studio-tutorial4/
+
+-- eclipse 源码导入 AS : http://www.cnblogs.com/ct2011/p/4183553.html
+
+-- 大牛教程一 : http://blog.csdn.net/ryantang03/article/details/8948037
+
+-- 大牛教程二 : http://blog.csdn.net/ryantang03/article/details/8948037
+
+-- 依赖 : http://my.oschina.net/u/1471093/blog/341990
